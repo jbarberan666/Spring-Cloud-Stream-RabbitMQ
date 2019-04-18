@@ -1,6 +1,6 @@
 package com.example.SpringCloudStreamRabbitMQ.controller.consumer;
 
-import com.example.SpringCloudStreamRabbitMQ.entity.Message;
+import com.example.SpringCloudStreamRabbitMQ.entity.SampleMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -18,7 +18,7 @@ public class ConsumerMessageController {
     private final SseEmitter sseEmitter = new SseEmitter(0L);
 
     @StreamListener(Sink.INPUT)
-    public void onMessagePublished(Message m) throws IOException {
+    public void onMessagePublished(SampleMessage m) throws IOException {
         log.info("Received message: {}", m);
         sseEmitter.send(m);
     }

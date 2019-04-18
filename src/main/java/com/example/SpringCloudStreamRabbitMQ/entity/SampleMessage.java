@@ -5,7 +5,7 @@ import lombok.*;
 @Data
 @RequiredArgsConstructor
 @ToString
-public class Message {
+public class SampleMessage {
 
     private String senderLastName;
     private String senderFirstName;
